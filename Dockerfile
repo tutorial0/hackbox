@@ -5,9 +5,9 @@ echo "deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib
 RUN apt update -y
 RUN apt install -y git python2.7 python3.5 g++ gcc gdb make kali-linux-top10 kali-linux-web tree nload htop
 WORKDIR /root
-#RUN echo "alias ll='ls-l'" > .bashrc
-#RUN source .bashrc
-RUN alias ll='ls-l'
+RUN echo "alias ll='ls -l'" > .bashrc
+RUN source .bashrc
+RUN alias ll='ls -l'
 RUN mkdir infomation_gather
 WORKDIR infomation_gather
 RUN git clone https://github.com/maurosoria/dirsearch.git
@@ -32,7 +32,7 @@ RUN git clone https://github.com/KibodWapon/NoEye.git
 WORKDIR ../
 RUN mkdir dicts
 WORKDIR dicts
-#RUN git clone https://github.com/tennc/fuzzdb.git 
+RUN git clone https://github.com/tennc/fuzzdb.git 
 WORKDIR ../
 RUN mkdir bruteforce
 WORKDIR bruteforce
@@ -58,7 +58,7 @@ RUN git clone https://github.com/cve-search/cve-search.git
 RUN git clone https://github.com/fate0/getproxy.git
 RUN git clone https://github.com/5alt/lianwifi.git
 RUN git clone https://github.com/sechacking/scriptkid.git
-#RUN git clone https://github.com/offensive-security/exploit-database.git
+RUN git clone https://github.com/offensive-security/exploit-database.git
 WORKDIR ../
 RUN mkdir intranet_pentest
 WORKDIR intranet_pentest
