@@ -6,7 +6,7 @@ RUN apt update -y
 RUN apt install -y git python2.7 python3.5 g++ gcc gdb make kali-linux-top10 kali-linux-web tree nload htop
 WORKDIR /root
 RUN echo "alias ll='ls -l'" > .bashrc
-RUN source .bashrc
+#RUN source .bashrc
 RUN alias ll='ls -l'
 RUN mkdir infomation_gather
 WORKDIR infomation_gather
